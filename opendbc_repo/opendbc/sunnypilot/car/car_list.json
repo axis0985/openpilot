@@ -1150,6 +1150,19 @@
     ],
     "package": "Honda Sensing"
   },
+  "Honda Fit 2022-25": {
+    "platform": "HONDA_FIT_4G",
+    "make": "Honda",
+    "brand": "honda",
+    "model": "Fit",
+    "year": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "package": "Honda Sensing"
+  },
   "Honda Freed 2020": {
     "platform": "HONDA_FREED",
     "make": "Honda",

@@ -241,6 +241,14 @@ class CAR(Platforms):
     {Bus.pt: 'honda_bosch_radarless_generated'},
     flags=HondaFlags.BOSCH_RADARLESS,
   )
+  HONDA_FIT_4G = HondaBoschPlatformConfig(
+    [
+      HondaCarDocs("Honda Fit 2022-25", "All"),
+    ],
+    CarSpecs(mass=2867 * CV.LB_TO_KG, wheelbase=2.53, steerRatio=15.0, centerToFrontRatio=0.41),
+    {Bus.pt: 'honda_bosch_radarless_generated'},
+    flags=HondaFlags.BOSCH_RADARLESS,
+  )
   ACURA_RDX_3G = HondaBoschPlatformConfig(
     [HondaCarDocs("Acura RDX 2019-21", "All", min_steer_speed=3. * CV.MPH_TO_MS)],
     CarSpecs(mass=4068 * CV.LB_TO_KG, wheelbase=2.75, steerRatio=11.95, centerToFrontRatio=0.41, tireStiffnessFactor=0.677),  # as spec
@@ -376,6 +384,7 @@ STEER_THRESHOLD = {
   CAR.ACURA_MDX_4G_MMR: 600,
   CAR.HONDA_CRV_6G: 600,
   CAR.HONDA_CITY_7G: 600,
+  CAR.HONDA_FIT_4G: 600,
   CAR.HONDA_NBOX_2G: 600,
 }
 
