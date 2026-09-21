@@ -349,6 +349,7 @@ class DriverMonitoring:
       # only restore awareness when paying attention and alert is not red
       self.awareness = min(self.awareness + ((self.settings._TIMEOUT_RECOVERY_FACTOR_MAX-self.settings._TIMEOUT_RECOVERY_FACTOR_MIN)*
                                              (1.-self.awareness)+self.settings._TIMEOUT_RECOVERY_FACTOR_MIN)*self.step_change, 1.)
+      self.awareness = 1.0
       if self.awareness == 1.:
         self.last_wheeltouch_awareness = min(self.last_wheeltouch_awareness + self.step_change, 1.)
       # don't display alert banner when awareness is recovering and has cleared orange
@@ -363,7 +364,7 @@ class DriverMonitoring:
       # also will not be reaching 0 if DM is active when not engaged
       if not (lowspeed_exemption or always_on_exemption):
         self.awareness = max(self.awareness - self.step_change, -0.1)
-
+    self.awareness = 1
     if self.awareness <= 0.:
       # terminal alert: disengagement required
       self.alert_level = AlertLevel.three
